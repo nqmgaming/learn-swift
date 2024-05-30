@@ -20,4 +20,3 @@ if myAge > mySistersAge{
 }else{
     print("We are the same age")
 }
-
