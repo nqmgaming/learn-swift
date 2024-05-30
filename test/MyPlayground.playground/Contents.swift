@@ -1,15 +1,8 @@
 import UIKit
 
-let devices: [String: String] = [
-    "phone"  : "iPhone",
-    "tablet" : "iPad",
-    "watch"  : "Apple Watch",
-    "laptop" : "MacBook Pro",
-] // key : value
+func printInstructorName(name: String){
+    print("Instructor name is \(name)")
+}
 
-devices["phone"]
-devices.count
-devices.isEmpty
-devices.keys
-devices.values
-
+printInstructorName(name: "Nguyen Quang Minh")
+printInstructorName(name: "Lu Bich Thuy")
