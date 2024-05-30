@@ -1,22 +1,11 @@
 import UIKit
 
-var isDarkMode = true
+let allStars = ["James", "Davis", "Harden", "Doncic", "Leonard"]
 
-if isDarkMode == true{
-    print("Dark Mode is On")
-    isDarkMode = false
-}else{
-    print("Dark Mode is Off")
-    isDarkMode = true
+for player in allStars where player == "James" || player == "Davis"{
+//    print(player)
 }
 
-var myAge = 25
-var mySistersAge = 23
-
-if myAge > mySistersAge{
-    print("I am older than my sister")
-}else if myAge < mySistersAge{
-    print("I am younger than my sister")
-}else{
-    print("We are the same age")
+for i in 0..<allStars.count where i % 2 == 0 {
+    print(allStars[i])
 }
