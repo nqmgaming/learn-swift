@@ -1,1 +1,2 @@
-# learn sifft
+# learn swift
+just learn new language
