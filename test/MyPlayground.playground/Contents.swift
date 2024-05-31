@@ -37,4 +37,15 @@ class iOsDeveloper: Developer{
     func speakFavoriteLanguage() {
         print("My favorite language is \(favoriteLanguage ?? "N/A")")
     }
+
+    override func speakName() {
+        print("I'm an iOS Developer, my name is \(name ?? "N/A")")
+    }
 }
+
+let developer = iOsDeveloper(name: "Minh", jobTitle: "iOS Developer", yearsOfExperience: 3)
+developer.favoriteLanguage = "Swift"
+developer.speakName()
+developer.speakFavoriteLanguage()
+print("Actualy, I like Kotlin more than Swift till now")
+
