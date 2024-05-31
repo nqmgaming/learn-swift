@@ -1,40 +1,42 @@
 import UIKit
 
-var ages: [Int] = []
+// Class: Class is a blueprint for creating objects. A class defines properties and methods that are common to all objects of a certain kind.
 
-ages.sort()
+class Developer {
+    var name: String?
+    var jobTitle: String?
+    var yearsOfExperience: Int?
 
-let oldest = ages.last
+    init(){}
 
-// If let
-if let oldest = oldest {
-    print("Oldest person is \(oldest) years old")
-} else {
-    print("No one has been born yet")
-}
-
-// Nil coalescing operator
-let oldestAge = ages.last ?? 0
-print("Oldest person is \(oldestAge) years old")
-
-// Guard statement
-func printOldestPerson() {
-    guard let oldest = oldest else {
-        print("No one has been born yet")
-        return
+    init(name: String, jobTitle: String, yearsOfExperience: Int) { // it like a constructor in Java
+        self.name = name
+        self.jobTitle = jobTitle
+        self.yearsOfExperience = yearsOfExperience
     }
-    print("Oldest person is \(oldest) years old")
+
+    // To String
+    func toString() -> String {
+        let formattedName = name ?? "N/A"
+        let formattedJobTitle = jobTitle ?? "N/A"
+        let formattedYearsOfExperience = yearsOfExperience ?? 0
+
+        return "\(formattedName) - \(formattedJobTitle), \(formattedYearsOfExperience) year(s)"
+    }
 }
 
-printOldestPerson()
+// Object: An object is an instance of a class. When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
 
-// Force unwrapping
-let oldestPerson = oldest! // if oldest is nil, this will crash
-print("Oldest person is \(oldestPerson) years old")
+let developer = Developer(name: "Minh", jobTitle: "iOS Developer", yearsOfExperience: 0)
+let emptyDeveloper = Developer()
 
-// Optional chaining
-let label = UILabel()
-label.text = "Hello, World!"
-let text = label.text?.lowercased()
-print(text)
+print(developer.name) // Minh
 
+developer.name = "Minh Nguyen"
+
+
+emptyDeveloper.name = "Nguyen Quang Minh"
+emptyDeveloper.jobTitle = "Internship Mobile Developer"
+emptyDeveloper.yearsOfExperience = 1
+
+print(emptyDeveloper.toString()) // Nguyen Quang Minh - Internship Mobile Developer, 1 year(s
