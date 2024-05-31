@@ -23,20 +23,18 @@ class Developer {
 
         return "\(formattedName) - \(formattedJobTitle), \(formattedYearsOfExperience) year(s)"
     }
+
+    func speakName() {
+        print("My name is \(name ?? "N/A")")
+    }
 }
 
-// Object: An object is an instance of a class. When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
+// Inheritance: Inheritance is a mechanism in which one class acquires the property of another class. For example, a child inherits the traits of his/her parents. It like extends in Java or Kotlin
 
-let developer = Developer(name: "Minh", jobTitle: "iOS Developer", yearsOfExperience: 0)
-let emptyDeveloper = Developer()
+class iOsDeveloper: Developer{
+    var favoriteLanguage: String?
 
-print(developer.name) // Minh
-
-developer.name = "Minh Nguyen"
-
-
-emptyDeveloper.name = "Nguyen Quang Minh"
-emptyDeveloper.jobTitle = "Internship Mobile Developer"
-emptyDeveloper.yearsOfExperience = 1
-
-print(emptyDeveloper.toString()) // Nguyen Quang Minh - Internship Mobile Developer, 1 year(s
+    func speakFavoriteLanguage() {
+        print("My favorite language is \(favoriteLanguage ?? "N/A")")
+    }
+}
