@@ -1,24 +1,34 @@
 import UIKit
 
-enum Phone : String{
-    case iPhone = "iPhone"
-    case Android = "Android"
-    case Windows = "Windows"
+// Switch statement
+
+enum WeatherType {
+    case sun
+    case cloud
+    case rain
+    case wind(speed: Int)
+    case snow
 }
 
-func getPhone(phone: Phone) -> String {
-    //    switch phone {
-    //        case .iPhone:
-    //            return "iPhone"
-    //        case .Android:
-    //            return "Android"
-    //        case .Windows:
-    //            return "Windows"
-    //    }
+let weather: WeatherType = .wind(speed: 5)
 
-    return phone.rawValue
+func getWeatherInfo(weather: WeatherType) -> String {
+    switch weather {
+        case .sun:
+            return "It's sunny"
+        case .cloud:
+            return "It's cloudy"
+        case .rain:
+            return "It's raining"
+        case .wind(let speed) where speed < 10:
+            return "It's windy"
+        case .wind(let speed) where speed >= 10:
+            return "It's very windy"
+        case .snow:
+            return "It's snowing"
+        default:
+            return "Unknown weather"
+    }
 }
 
-let phone = getPhone(phone: .iPhone)
-
-print(phone)
+print(getWeatherInfo(weather: .rain))
