@@ -1,22 +1,24 @@
 import UIKit
 
-let allStars = ["James", "Davis", "Harden", "Doncic", "Leonard"]
-
-for player in allStars where player == "James" || player == "Davis"{
-    //    print(player)
+enum Phone : String{
+    case iPhone = "iPhone"
+    case Android = "Android"
+    case Windows = "Windows"
 }
 
-var randomInts: [Int] = []
+func getPhone(phone: Phone) -> String {
+    //    switch phone {
+    //        case .iPhone:
+    //            return "iPhone"
+    //        case .Android:
+    //            return "Android"
+    //        case .Windows:
+    //            return "Windows"
+    //    }
 
-for i in 1...10 {
-    let randomInt = Int.random(in: 1...100)
-    randomInts.append(randomInt)
+    return phone.rawValue
 }
 
-for i in randomInts where i % 2 == 0 {
-    print(i)
-}
+let phone = getPhone(phone: .iPhone)
 
-for i in 0..<allStars.count where i % 2 == 0 {
-    //    print(allStars[i])
-}
+print(phone)
