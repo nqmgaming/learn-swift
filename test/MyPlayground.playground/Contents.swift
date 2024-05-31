@@ -1,51 +1,23 @@
 import UIKit
 
-// Class: Class is a blueprint for creating objects. A class defines properties and methods that are common to all objects of a certain kind.
 
-class Developer {
-    var name: String?
-    var jobTitle: String?
-    var yearsOfExperience: Int?
+// Structs: Structs are value types. It means that when you pass a struct to a function or assign it to a variable, it gets copied. This is different from classes, which are reference types. When you pass a class to a function or assign it to a variable, you are passing a reference to the same object in memory.
 
-    init(){}
+struct Developer {
+    var name: String
+    var jobTitle: String
+    var yearsOfExperience: Int
 
     init(name: String, jobTitle: String, yearsOfExperience: Int) { // it like a constructor in Java
         self.name = name
         self.jobTitle = jobTitle
         self.yearsOfExperience = yearsOfExperience
     }
-
-    // To String
-    func toString() -> String {
-        let formattedName = name ?? "N/A"
-        let formattedJobTitle = jobTitle ?? "N/A"
-        let formattedYearsOfExperience = yearsOfExperience ?? 0
-
-        return "\(formattedName) - \(formattedJobTitle), \(formattedYearsOfExperience) year(s)"
-    }
-
-    func speakName() {
-        print("My name is \(name ?? "N/A")")
-    }
 }
 
-// Inheritance: Inheritance is a mechanism in which one class acquires the property of another class. For example, a child inherits the traits of his/her parents. It like extends in Java or Kotlin
+var developer = Developer(name: "John", jobTitle: "iOS Developer", yearsOfExperience: 5)
 
-class iOsDeveloper: Developer{
-    var favoriteLanguage: String?
+var developer2 = developer
 
-    func speakFavoriteLanguage() {
-        print("My favorite language is \(favoriteLanguage ?? "N/A")")
-    }
-
-    override func speakName() {
-        print("I'm an iOS Developer, my name is \(name ?? "N/A")")
-    }
-}
-
-let developer = iOsDeveloper(name: "Minh", jobTitle: "iOS Developer", yearsOfExperience: 3)
-developer.favoriteLanguage = "Swift"
-developer.speakName()
-developer.speakFavoriteLanguage()
-print("Actualy, I like Kotlin more than Swift till now")
-
+developer2.name = "Jane"
+developer.name // John
